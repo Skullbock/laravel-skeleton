@@ -71,6 +71,10 @@ jobs:
       - name: Start MYSql
         run: sudo /etc/init.d/mysql start
 
+      - name: Install dependencies
+        run: |
+          composer install
+
       - name: Boot Laravel application
         run: |
           cp .env.ci .env
