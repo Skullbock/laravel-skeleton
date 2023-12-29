@@ -76,7 +76,7 @@ class AdminPanelProvider extends PanelProvider
     {
         Filament::registerRenderHook(
             'panels::auth.login.form.before',
-            fn(): string => Blade::render(<<<HTML
+            fn (): string => Blade::render(<<<'HTML'
              @env('local')
              <div class="flex space-x-2 leading-none">
                 <strong>Login As: </strong>
@@ -92,7 +92,7 @@ class AdminPanelProvider extends PanelProvider
     {
         if (config('app.debug')) {
             FilamentAsset::register([
-                Js::make('clockwork-toolbar', 'https://cdn.jsdelivr.net/gh/underground-works/clockwork-browser@1/dist/toolbar.js')
+                Js::make('clockwork-toolbar', 'https://cdn.jsdelivr.net/gh/underground-works/clockwork-browser@1/dist/toolbar.js'),
             ]);
         }
     }
