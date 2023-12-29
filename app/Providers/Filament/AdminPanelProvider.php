@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -9,7 +10,9 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\SpatieLaravelTranslatablePlugin;
+use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentAsset;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -17,10 +20,17 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
+    public function boot(): void
+    {
+        $this->renderAdminLoginLinksInLocalEnv();
+        $this->addDebugBarScript();
+    }
+
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -57,7 +67,32 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(locales()->keys()->toArray()),
+                    ->defaultLocales(\locales()->keys()->toArray()),
             ]);
+    }
+
+    private function renderAdminLoginLinksInLocalEnv(): void
+    {
+        Filament::registerRenderHook(
+            'panels::auth.login.form.before',
+            fn(): string => Blade::render(<<<HTML
+             @env('local')
+             <div class="flex space-x-2 leading-none">
+                <strong>Login As: </strong>
+                <div><x-login-link email="admin@example.com" label="Admin" /></div>
+            </div>
+             @endenv
+            HTML
+            )
+        );
+    }
+
+    private function addDebugBarScript(): void
+    {
+        if (config('app.debug')) {
+            FilamentAsset::register([
+                Js::make('clockwork-toolbar', 'https://cdn.jsdelivr.net/gh/underground-works/clockwork-browser@1/dist/toolbar.js')
+            ]);
+        }
     }
 }
