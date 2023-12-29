@@ -17,7 +17,7 @@ This skeleton comes with
 
 ## Packages
 
-- https://filamentphp.com/ with a default admin panel
+- https://filamentphp.com/ with a default admin panel and its vite theme
 - https://spatie.be/docs/laravel-translatable with its filament counterpart (https://filamentphp.com/plugins/filament-spatie-translatable)
 - https://spatie.be/docs/laravel-medialibrary and its filament counterpart (https://filamentphp.com/plugins/filament-spatie-media-library)
 - https://github.com/spatie/laravel-login-link with the easy admin login link in locale environments
@@ -25,4 +25,8 @@ This skeleton comes with
 
 ## Setup
 
-- User Seeder with admin@example.com as the admin user than can login into filament
+- User Seeder with `admin@example.com` as the admin user than can login into filament
+- Model strict settings
+- Model unguarded
+- Model relation aliases
+- Blade layouts using components
