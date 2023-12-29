@@ -17,10 +17,13 @@ This skeleton comes with
 
 ## Packages
 
-- https://filamentphp.com/ with a default admin panel and its vite theme
+- https://filamentphp.com/ with a default admin panel and its custom vite theme
 - https://spatie.be/docs/laravel-translatable with its filament counterpart (https://filamentphp.com/plugins/filament-spatie-translatable)
 - https://spatie.be/docs/laravel-medialibrary and its filament counterpart (https://filamentphp.com/plugins/filament-spatie-media-library)
+- https://github.com/spatie/laravel-settings and its filament counterpart (https://github.com/filamentphp/spatie-laravel-settings-plugin?tab=readme-ov-file)
+- https://github.com/spatie/laravel-settings and its filament counterpart (https://github.com/filamentphp/spatie-laravel-settings-plugin?tab=readme-ov-file)
 - https://github.com/spatie/laravel-login-link with the easy admin login link in locale environments
+- https://underground.works/clockwork/ for debugging
 
 
 ## Setup
