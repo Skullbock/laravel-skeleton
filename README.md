@@ -9,11 +9,11 @@ This skeleton comes with
 
 ## Installation
 
-`composer create-project weble/laravel-skeleton {project-name}`
-`cd {project-name}`
-`composer install`
-`php artisan migrate`
-`php artisan db:seed`
+- `composer create-project weble/laravel-skeleton {project-name}`
+- `cd {project-name}`
+- `composer install`
+- `php artisan migrate`
+- `php artisan db:seed`
 
 ## Packages
 
