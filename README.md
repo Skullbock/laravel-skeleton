@@ -9,7 +9,7 @@ This skeleton comes with
 
 ## Installation
 
-- `composer create-project weble/laravel-skeleton {project-name}`
+- `composer create-project weble/laravel-skeleton:dev-main {project-name}`
 - `cd {project-name}`
 - `composer install`
 - `php artisan migrate`
@@ -47,4 +47,4 @@ When in production, remember to add the scheduler settings to the server.
 - Model relation aliases
 - Blade layouts using components
 - Preconfigured Tailwind CSS in the frontend
-
+- Italian and English language installed via https://laravel-lang.com/

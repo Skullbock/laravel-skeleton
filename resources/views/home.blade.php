@@ -1,3 +1,5 @@
 <x-layouts::layout>
-    <h1 class="font-serif font-bold text-3xl">Homepage</h1>
+    <section class="container mx-auto">
+        <h1 class="font-serif font-bold text-3xl py-4">Homepage</h1>
+    </section>
 </x-layouts::layout>

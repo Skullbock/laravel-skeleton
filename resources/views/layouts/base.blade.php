@@ -1,44 +1,36 @@
-<x-layouts::html class="bg-gray-50">
-    <x-slot:head>
-        <script>
-            window.locale = '{{ app()->getLocale() }}';
-        </script>
+<x-layouts::html  {{ $attributes }}>
+    @push('head')
+        <script>window.locale = '{{ app()->getLocale() }}';</script>
 
-        <!-- Styles -->
+        {{-- Filament Styles --}}
         @filamentStyles
-        @vite('resources/css/app.css')
 
+        {{-- Our styles and scripts--}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        {{-- Tag Manager --}}
         @env('production')
             @include('googletagmanager::head')
         @endenv
 
         @livewireStyles
+    @endpush
 
-    </x-slot:head>
-
-    <x-slot:seo>
-        {!! $seo ?? seo() !!}
-    </x-slot:seo>
-
+    {{-- Tag Manager --}}
     @env('production')
         @include('googletagmanager::body')
     @endenv
 
+    {{-- Content --}}
     {{ $slot }}
 
-    @stack('pre-scripts')
-
+    {{-- Filament Scripts --}}
     @filamentScripts
-    @vite('resources/js/app.js')
 
-    @stack('scripts')
 
-    @stack('modals')
-
-    @livewireScripts
-
+    {{-- Debug Bar --}}
     @env('local')
-        <script src="https://cdn.jsdelivr.net/gh/underground-works/clockwork-browser@1/dist/toolbar.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/underground-works/clockwork-browser@1/dist/toolbar.js"></script>
     @endenv
 
 </x-layouts::html>
