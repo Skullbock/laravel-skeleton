@@ -26,8 +26,6 @@
 
     {{ $slot }}
 
-    {{--    @routes--}}
-
     @stack('pre-scripts')
 
     @filamentScripts
