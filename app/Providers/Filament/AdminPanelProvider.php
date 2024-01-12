@@ -14,6 +14,7 @@ use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Facades\FilamentView;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -34,11 +35,19 @@ class AdminPanelProvider extends PanelProvider
 
     public function panel(Panel $panel): Panel
     {
+        FilamentView::registerRenderHook(
+            'panels::head.start',
+            fn (): string => '<meta name="robots" content="noindex,nofollow">'
+        );
+
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
+            ->spa()
+            ->favicon(asset('/favicon.ico'))
+            ->brandLogo(fn () => view('admin.logo'))
             ->colors([
                 'primary' => Color::Blue,
             ])
