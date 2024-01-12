@@ -15,21 +15,36 @@ This skeleton comes with
 - `php artisan migrate`
 - `php artisan db:seed`
 
+## Deployment
+
+The skeleton comes with preconfigured code styling and testing for Github Actions.
+
+When in production, remember to add the scheduler settings to the server.
+
+```* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1```
+
+
+
 ## Packages
 
 - https://filamentphp.com/ with a default admin panel and its custom vite theme
+- https://github.com/bezhanSalleh/filament-exceptions?tab=readme-ov-file for viewing exceptions in filament.
 - https://spatie.be/docs/laravel-translatable with its filament counterpart (https://filamentphp.com/plugins/filament-spatie-translatable)
 - https://spatie.be/docs/laravel-medialibrary and its filament counterpart (https://filamentphp.com/plugins/filament-spatie-media-library)
 - https://github.com/spatie/laravel-settings and its filament counterpart (https://github.com/filamentphp/spatie-laravel-settings-plugin?tab=readme-ov-file)
-- https://github.com/spatie/laravel-settings and its filament counterpart (https://github.com/filamentphp/spatie-laravel-settings-plugin?tab=readme-ov-file)
+- https://github.com/ralphjsmit/laravel-seo and its filament counterpart(https://github.com/ralphjsmit/laravel-filament-seo)
 - https://github.com/spatie/laravel-login-link with the easy admin login link in locale environments
+- https://github.com/spatie/laravel-googletagmanager to have automatic GTM integration
+- https://github.com/pboivin/filament-peek/tree/2.x to have a ready to use preview action
 - https://underground.works/clockwork/ for debugging
 
 
-## Setup
+## Default Settings
 
 - User Seeder with `admin@example.com` as the admin user than can login into filament
 - Model strict settings
 - Model unguarded
 - Model relation aliases
 - Blade layouts using components
+- Preconfigured Tailwind CSS in the frontend
+

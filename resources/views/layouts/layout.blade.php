@@ -1,6 +1,6 @@
 <x-layouts::base>
     <x-slot:seo>
-{{--        {!! $seo ?? seo() !!}--}}
+        {!! $seo ?? seo() !!}
     </x-slot:seo>
 
     <!-- Page Content -->
