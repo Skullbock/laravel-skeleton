@@ -18,9 +18,9 @@ class ShowCookieModalAction extends Action
             CheckboxList::make('test')
                 ->options([
                     '1' => 1,
-                ])
+                ]),
         ]);
 
-        $this->action(fn(array $data) => dump('123'));
+        $this->action(fn (array $data) => dump('123'));
     }
 }

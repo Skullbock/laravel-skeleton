@@ -12,9 +12,9 @@ use Weble\LaravelFilamentCookieBar\Livewire\HasCookieBar;
 
 class Footer extends Component implements HasActions, HasForms
 {
+    use HasCookieBar;
     use InteractsWithActions;
     use InteractsWithForms;
-    use HasCookieBar;
 
     public function render(): View
     {

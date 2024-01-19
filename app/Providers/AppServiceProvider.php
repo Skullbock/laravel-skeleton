@@ -3,10 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
-use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
-use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentColor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
