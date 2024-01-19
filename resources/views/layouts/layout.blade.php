@@ -7,6 +7,7 @@
         {{ $slot }}
     </main>
 
-    <x-layouts::sections.footer />
+    {{-- Footer and Cookiebar --}}
+    <livewire:footer />
 
 </x-layouts::base>

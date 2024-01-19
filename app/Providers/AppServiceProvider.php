@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use App\Models\User;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
+use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Facades\FilamentColor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Collection;
@@ -25,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureRelations();
         $this->registerBladeComponents();
         $this->registerCollectionMacros();
+        $this->customizeFilamentColors();
     }
 
     private function configureModels(): void
@@ -55,5 +61,12 @@ class AppServiceProvider extends ServiceProvider
                 fn ($value) => (is_array($value) || is_object($value)) ? Collection::make($value)->recursive() : $value
             )
         );
+    }
+
+    private function customizeFilamentColors(): void
+    {
+        FilamentColor::register([
+            'primary' => Color::Blue,
+        ]);
     }
 }
