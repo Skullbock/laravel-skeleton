@@ -33,7 +33,7 @@ When in production, remember to add the scheduler settings to the server.
 - https://github.com/ralphjsmit/laravel-seo and its filament counterpart(https://github.com/ralphjsmit/laravel-filament-seo)
 - https://github.com/spatie/laravel-login-link with the easy admin login link in locale environments
 - https://github.com/spatie/laravel-googletagmanager to have automatic GTM integration
-- https://github.com/weble/laravel-cookiebar for a valid cookiebar integration with GTM consent mode
+- https://github.com/weble/laravel-filament-cookiebar for a valid cookiebar integration with GTM consent mode using filament
 - https://spatie.be/docs/laravel-data/v3/introduction for DTOs
 - https://github.com/pboivin/filament-peek/tree/2.x to have a ready to use preview action
 - https://underground.works/clockwork/ for debugging
@@ -48,3 +48,4 @@ When in production, remember to add the scheduler settings to the server.
 - Blade layouts using components
 - Preconfigured Tailwind CSS in the frontend
 - Italian and English language installed via https://laravel-lang.com/
+- CookieBar setup with GTM integration
